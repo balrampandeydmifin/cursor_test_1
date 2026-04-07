@@ -69,24 +69,47 @@ If your project has a `requirements.txt` file, install dependencies:
 pip install -r requirements.txt
 ```
 
+---
+
+## Open webpage script (`open_webpage.py`)
+
+Opens a URL in your default browser using the standard library (`webbrowser`). No extra packages are required.
+
+From the project root:
+
+```bash
+python3 open_webpage.py
+```
+
+Opens `https://example.com` by default.
+
+```bash
+python3 open_webpage.py https://www.python.org
+```
+
+Optional: open in a new window or tab when the browser supports it:
+
+```bash
+python3 open_webpage.py -n 1 https://example.com   # new window
+python3 open_webpage.py -n 2 https://example.com   # new tab
+```
+
+```bash
+python3 open_webpage.py --help
+```
+
+## Tests
+
+Tests mock `webbrowser.open`, so no browser window is opened during the run.
+
+From the project root:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
 ## Troubleshooting
 
 - If `python` command not found, try `python3`
 - On Windows, ensure Python is added to PATH
 - For more help, visit [python.org](https://www.python.org/)
-
-## Troubleshooting
-
-- If port 3000 is busy, React may suggest another port automatically.
-- If dependencies fail to install, delete `node_modules` and `package-lock.json`, then run:
-
-```bash
-npm install
-```
-
-## Optional: Create App with TypeScript
-
-```bash
-npx create-react-app my-react-app --template typescript
-```
-
